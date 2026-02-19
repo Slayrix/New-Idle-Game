@@ -1,5 +1,0 @@
-2/18/26
-
-First test with html/javascript
-
-Basic button that increases number as you click
