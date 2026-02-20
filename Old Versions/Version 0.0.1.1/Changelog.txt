@@ -1,4 +1,4 @@
 Archive Date: 2/19/26
 
-Restructured code to increase reusability:
+Restructured code to increase reusability
 Created Currency and Button class
