@@ -1,0 +1,41 @@
+.upgradeContainer {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: default;
+    position: relative;
+    margin-right: 4px;
+}
+
+.upgradeNameText {
+    background-color: #cfcfcf;
+    outline: 1px solid #000000;
+    padding: 2px;
+}
+
+.upgradeInfoBox {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: #cfcfcf;
+    outline: 1px solid #000000;
+    padding: 2px;
+    margin-top: 5px;
+    position: absolute;
+    top: 100%;
+    min-width: 100%;
+    width: max-content;
+    max-width: 200px;
+}
+
+.upgradeInfoText,
+.upgradeCostText {
+    width: 100%;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.upgradeBuyButton {
+    width: 100%;
+    text-align: center;
+}
