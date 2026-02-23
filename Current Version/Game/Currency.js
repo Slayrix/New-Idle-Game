@@ -13,11 +13,13 @@ export default class Currency {
 
     addAmount(amount) {
         this.currencyAmount += amount;
+        this.currencyAmount = parseFloat(this.currencyAmount.toFixed(2));
         this.setTextContentToCurrencyAmount();
     }
 
     subAmount(amount) {
         this.currencyAmount -= amount;
+        this.currencyAmount = parseFloat(this.currencyAmount.toFixed(2));
         this.setTextContentToCurrencyAmount();
     }
 
@@ -31,6 +33,7 @@ export default class Currency {
 
     genCurrency() {
         this.currencyAmount += this.gainPerSecond;
+        this.currencyAmount = parseFloat(this.currencyAmount.toFixed(2));
         this.setTextContentToCurrencyAmount();
     }
 

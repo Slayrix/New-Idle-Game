@@ -78,6 +78,7 @@ export default class Upgrade {
             this.currencyCost.subAmount(this.amountCost);
             this.currentLevel += 1;
             this.amountCost *= this.upgradeCostMult;
+            this.amountCost = parseFloat(this.amountCost.toFixed(2));
             this.updateCostText();
             this.effect();
             if (this.currentLevel >= this.maxLevel) {
