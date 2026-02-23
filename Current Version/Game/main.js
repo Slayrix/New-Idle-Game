@@ -1,6 +1,9 @@
 import Currency from "./Currency.js";
 import Button from "./Button.js";
 import Upgrade from "./Upgrade.js";
+import Cheats from "./Cheats.js";
+
+const cheats = new Cheats();
 
 let energyGenPerClick = .01;
 

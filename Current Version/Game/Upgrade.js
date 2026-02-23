@@ -1,4 +1,5 @@
 import Button from "./Button.js";
+import * as helperFunctions from "./helperFunctions.js";
 
 export default class Upgrade {
     constructor({
@@ -22,19 +23,12 @@ export default class Upgrade {
 
     static currentlyOpenInfobox = null;
 
-    createElement(type, textContent = null, className) {
-        const element = document.createElement(type);
-        if (textContent) element.textContent = textContent;
-        element.classList.add(className);
-        return element;
-    }
-
     createUpgradeContainer(upgradeName, upgradeInfo) {
-        this.upgradeContainer = this.createElement("div", null, "upgradeContainer");
-        this.upgradeNameText = this.createElement("div", upgradeName, "upgradeNameText");
-        this.infoBox = this.createElement("div", null, "upgradeInfoBox");
-        this.upgradeInfoText = this.createElement("div", upgradeInfo, "upgradeInfoText");
-        this.upgradeCostText = this.createElement("div", "Costs: " + this.amountCost.toString(), "upgradeCostText");
+        this.upgradeContainer = helperFunctions.createElement("div", null, "upgradeContainer");
+        this.upgradeNameText = helperFunctions.createElement("div", upgradeName, "upgradeNameText");
+        this.infoBox = helperFunctions.createElement("div", null, "upgradeInfoBox");
+        this.upgradeInfoText = helperFunctions.createElement("div", upgradeInfo, "upgradeInfoText");
+        this.upgradeCostText = helperFunctions.createElement("div", "Costs: " + this.amountCost.toString(), "upgradeCostText");
 
         this.buyButton = new Button("Buy", () => this.buyUpgrade());
         this.buyButton.buttonVar.classList.add("upgradeBuyButton");

@@ -39,3 +39,22 @@
     width: 100%;
     text-align: center;
 }
+
+.cheatboxContainer {
+    position: absolute;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    top: 200px;
+    width: 150px;
+    height: 300px;
+    background-color: #000000;
+}
+
+.cheatButton {
+    width: 100%;
+}
+
+.cheatTextbox {
+    width: 50px;
+}
