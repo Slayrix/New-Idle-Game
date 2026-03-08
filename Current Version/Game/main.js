@@ -1,14 +1,15 @@
 import Currency from "./Currency.js";
 import Button from "./Button.js";
 import Upgrade from "./Upgrade.js";
-import Cheats from "./Cheats.js";
-
-const cheats = new Cheats();
 
 let energyGenPerClick = .01;
 
-const energy = new Currency("Energy: ");
+export const energy = new Currency("Energy: ");
 const genEnergyButton = new Button("Gen Energy", () => energy.addAmount(energyGenPerClick));
+
+window.debug = {
+    energy,
+};
 
 const genEnergyUpgrade = new Upgrade({
     upgradeCurrencyCost: energy,
