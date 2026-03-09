@@ -1,5 +1,5 @@
 import Button from "./Button.js";
-import * as helperFunctions from "./helperFunctions.js";
+import {helperFunctions} from "./helperFunctions.js";
 
 export default class Upgrade {
     constructor({
