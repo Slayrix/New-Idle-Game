@@ -1,56 +1,26 @@
-import Currency from "./Currency.js";
 import Button from "./Button.js";
-import Upgrade from "./Upgrade.js";
+import {upgrades} from "./upgrades.js";
+import {currencies} from "./currencies.js";
+import {playerStats} from "./playerStats.js";
 
-let energyGenPerClick = .01;
-
-export const energy = new Currency("Energy: ");
-const genEnergyButton = new Button("Gen Energy", () => energy.addAmount(energyGenPerClick));
+const genEnergyButton = new Button("Gen Energy", () => currencies.energy.addAmount(playerStats.energyGenPerClick));
 
 window.debug = {
-    energy,
+    currencies,
 };
-
-const genEnergyUpgrade = new Upgrade({
-    upgradeCurrencyCost: energy,
-    upgradeAmountCost: .10,
-    upgradeCostMult: 50,
-    upgradeEffect: () => buyGenEnergyUpgrade(),
-    upgradeMaxLevel: 5,
-    upgradeName: "Gen Energy Upgrade",
-    upgradeInfo: "Generate +0.01 more energy per click per level"
-});
-
-const autoGenEnergyUpgrade = new Upgrade({
-    upgradeCurrencyCost: energy,
-    upgradeAmountCost: 1,
-    upgradeCostMult: 1.1,
-    upgradeEffect: () => buyAutoGenEnergyUpgrade(),
-    upgradeMaxLevel: 5,
-    upgradeName: "Auto Gen Energy",
-    upgradeInfo: "Generate +0.01 energy per second"
-});
-
-function buyGenEnergyUpgrade() {
-    energyGenPerClick += .01;
-}
-
-function buyAutoGenEnergyUpgrade() {
-    energy.addAmountToGainPerSecond(.01);
-}
 
 const upgradeGroup = document.createElement("div");
 upgradeGroup.style.marginTop = "4px";
 upgradeGroup.style.marginLeft = "50px";
 
-energy.displayCurrency();
+currencies.energy.displayCurrency();
 genEnergyButton.displayButton();
 document.body.appendChild(upgradeGroup);
-genEnergyUpgrade.displayUpgrade(upgradeGroup);
-autoGenEnergyUpgrade.displayUpgrade(upgradeGroup);
+upgrades.genEnergyUpgrade.displayUpgrade(upgradeGroup);
+upgrades.autoGenEnergyUpgrade.displayUpgrade(upgradeGroup);
 
 function gameLoop() {
-    energy.genCurrency();
+    currencies.energy.genCurrency();
     setTimeout(gameLoop, 1000);
 }
 

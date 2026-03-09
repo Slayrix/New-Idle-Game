@@ -1,7 +1,3 @@
-Archive Date: 2/23/26
+Archive Date: 
 
-Improved Upgrade class code
-Removed test buttons
-Changed big bang upgrade to gen energy upgrade
-Added auto gen energy upgrade
-Added currency gen per second functionality
+Improved/restructured code to make it more modular
