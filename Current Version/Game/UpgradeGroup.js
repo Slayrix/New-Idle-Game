@@ -1,8 +1,15 @@
+export const helperFunctions = {
+    createElement: (type, textContent = null, className = null) => {
+        const element = document.createElement(type);
+        if (textContent != null) element.textContent = textContent;
+        if (className != null) element.classList.add(className);
+        return element;
+    },
+}
+
 export default class UpgradeGroup {
     constructor(displayMenu) {
-        this.upgradeGroupContainer = document.createElement("div");
-        this.upgradeGroupContainer.style.marginTop = "4px";
-        this.upgradeGroupContainer.style.marginLeft = "50px";
+        this.upgradeGroupContainer = helperFunctions.createElement("div", null, "upgradeGroup");
         displayMenu.appendElementToContainer(this.upgradeGroupContainer);
     }
 

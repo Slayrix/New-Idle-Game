@@ -34,8 +34,7 @@ export default class Upgrade {
         this.upgradeInfoText = helperFunctions.createElement("div", upgradeInfo, "upgradeInfoText");
         this.upgradeCostText = helperFunctions.createElement("div", "Costs: " + this.amountCost.toString(), "upgradeCostText");
 
-        this.buyButton = new Button("Buy", menus.menu, () => this.buyUpgrade());
-        this.buyButton.buttonVar.classList.add("upgradeBuyButton");
+        this.buyButton = new Button("Buy", menus.menu, () => this.buyUpgrade(), "upgradeBuyButton");
 
         this.setupHover();
 

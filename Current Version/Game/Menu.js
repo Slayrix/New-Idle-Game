@@ -1,6 +1,8 @@
+import {helperFunctions} from "./helperFunctions.js";
+
 export default class Menu {
     constructor() {
-        this.container = document.createElement("div");
+        this.container = helperFunctions.createElement("div", null, "menu")
     }
 
     appendElementToContainer(element) {

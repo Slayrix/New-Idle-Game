@@ -1,6 +1,9 @@
+import {helperFunctions} from "./helperFunctions.js";
+
 export default class Currency {
     constructor(currencyText, displayMenu) {
-        this.textVar = document.createElement("div");
+        this.textVar = helperFunctions.createElement("div", null, "currency")
+        //this.textVar = document.createElement("div");
         this.currencyText = currencyText;
         this.currencyAmount = 0;
         this.gainPerSecond = 0;

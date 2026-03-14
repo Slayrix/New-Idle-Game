@@ -40,21 +40,21 @@
     text-align: center;
 }
 
-.cheatboxContainer {
+.menu {
+    position: relative;
+}
+
+.currency {
     position: absolute;
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    top: 200px;
-    width: 150px;
-    height: 300px;
-    background-color: #000000;
 }
 
-.cheatButton {
-    width: 100%;
+.button {
+    position: absolute;
+    top: 25px;
 }
 
-.cheatTextbox {
-    width: 50px;
+.upgradeGroup {
+    position: absolute;
+    top: 55px;
+    left: 50px;
 }
