@@ -1,6 +1,7 @@
 import Currency from "../classes/Currency.js";
 import Menu from "../classes/Menu.js";
 import UpgradeGroup from "../classes/UpgradeGroup.js";
+import Button from "../classes/Button.js";
 
 export const menus = {
     menu: new Menu(),
@@ -16,4 +17,8 @@ export const playerStats = {
 
 export const upgradeGroups = {
     upgradeGroup: new UpgradeGroup(menus.menu),
+}
+
+export const buttons = {
+    genEnergyButton: new Button("Gen Energy", menus.menu, () => currencies.energy.addAmount(playerStats.energyGenPerClick)),
 }
