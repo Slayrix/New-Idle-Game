@@ -1,8 +1,8 @@
-import Button from "./Button.js";
-import {menus} from "./menus.js";
-import {upgrades} from "./upgrades.js";
-import {currencies} from "./currencies.js";
-import {playerStats} from "./playerStats.js";
+import Button from "./classes/Button.js";
+import {menus} from "./vars/gameVars.js";
+import {upgrades} from "./vars/upgrades.js";
+import {currencies} from "./vars/gameVars.js";
+import {playerStats} from "./vars/gameVars.js";
 
 const genEnergyButton = new Button("Gen Energy", menus.menu, () => currencies.energy.addAmount(playerStats.energyGenPerClick));
 

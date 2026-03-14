@@ -1,6 +1,6 @@
-import Button from "./Button.js";
-import {helperFunctions} from "./helperFunctions.js";
-import {menus} from "./menus.js";
+import Button from "../classes/Button.js";
+import {helperFunctions} from "../helperFunctions.js";
+import {menus} from "../vars/gameVars.js";
 
 export default class Upgrade {
     constructor({

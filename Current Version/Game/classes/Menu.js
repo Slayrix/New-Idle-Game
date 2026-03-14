@@ -1,4 +1,4 @@
-import {helperFunctions} from "./helperFunctions.js";
+import {helperFunctions} from "../helperFunctions.js";
 
 export default class Menu {
     constructor() {

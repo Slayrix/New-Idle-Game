@@ -1,7 +1,7 @@
-import Upgrade from "./Upgrade.js";
-import {currencies} from "./currencies.js";
-import {playerStats} from "./playerStats.js";
-import {upgradeGroups} from "./upgradeGroups.js";
+import Upgrade from "../classes/Upgrade.js";
+import {currencies} from "../vars/gameVars.js";
+import {playerStats} from "../vars/gameVars.js";
+import {upgradeGroups} from "../vars/gameVars.js";
 
 export const upgrades = {
     genEnergyUpgrade: new Upgrade({
