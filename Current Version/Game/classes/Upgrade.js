@@ -1,6 +1,5 @@
 import Button from "../classes/Button.js";
 import {helperFunctions} from "../helperFunctions.js";
-import {menus} from "../vars/gameVars.js";
 
 export default class Upgrade {
     constructor({
@@ -34,7 +33,7 @@ export default class Upgrade {
         this.upgradeInfoText = helperFunctions.createElement("div", upgradeInfo, "upgradeInfoText");
         this.upgradeCostText = helperFunctions.createElement("div", "Costs: " + this.amountCost.toString(), "upgradeCostText");
 
-        this.buyButton = new Button("Buy", menus.menu, () => this.buyUpgrade(), "upgradeBuyButton");
+        this.buyButton = new Button("Buy", null, () => this.buyUpgrade(), "upgradeBuyButton");
 
         this.setupHover();
 

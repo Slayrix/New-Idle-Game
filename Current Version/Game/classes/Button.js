@@ -1,11 +1,10 @@
 import {helperFunctions} from "../helperFunctions.js";
 
 export default class Button {
-    constructor(buttonText, displayMenu, buttonFunction, buttonClass = "button") {
+    constructor(buttonText, displayMenu = null, buttonFunction, buttonClass = "button") {
         this.buttonVar = helperFunctions.createElement("button", buttonText, buttonClass)
         this.buttonVar.addEventListener("click", buttonFunction);
-        displayMenu.appendElementToContainer(this.buttonVar)
-        
+        if (displayMenu != null) {displayMenu.appendElementToContainer(this.buttonVar)};
     }
 
     displayButton() {
