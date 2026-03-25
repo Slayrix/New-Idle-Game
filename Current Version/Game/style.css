@@ -57,4 +57,42 @@
     position: absolute;
     top: 55px;
     left: 50px;
+    background-color: #000000;
+}
+
+.upgradeContainerNew {
+    cursor: default;
+    user-select: none;
+    position: relative;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 5px;
+}
+
+.upgradeButton {
+    position: relative;
+    background-color: #cfcfcf;
+    width: max-content;
+    padding: 2px;
+    outline: 1px solid #000000;
+}
+
+.upgradeInfobox {
+    position: absolute;
+    width: max-content;
+    text-align: center;
+    max-width: 200px;
+    top: 27px;
+    background-color: #cfcfcf;
+    padding: 2px;
+    outline: 1px solid #000000;
+}
+
+.upgradeGroupNew {
+    position: absolute;
+    display: flex;
+    left: 200px;
+    top: 200px;
 }

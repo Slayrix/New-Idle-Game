@@ -8,7 +8,7 @@ export const menus = {
 }
 
 export const currencies = {
-    energy: new Currency("Energy: ", menus.menu)
+    energy: new Currency("Energy", menus.menu)
 }
 
 export const playerStats = {

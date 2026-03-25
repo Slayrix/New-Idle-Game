@@ -1,10 +1,9 @@
 import {helperFunctions} from "../helperFunctions.js";
 
 export default class Currency {
-    constructor(currencyText, displayMenu) {
+    constructor(currencyName, displayMenu) {
         this.textVar = helperFunctions.createElement("div", null, "currency")
-        //this.textVar = document.createElement("div");
-        this.currencyText = currencyText;
+        this.currencyName = currencyName;
         this.currencyAmount = 0;
         this.gainPerSecond = 0;
         this.setTextContentToCurrencyAmount();
@@ -12,7 +11,7 @@ export default class Currency {
     }
 
     setTextContentToCurrencyAmount() {
-        this.textVar.textContent = this.currencyText + this.currencyAmount.toString();
+        this.textVar.textContent = this.currencyName + ": " + this.currencyAmount.toString();
     }
 
     addAmount(amount) {
