@@ -10,8 +10,10 @@ upgradeName: new Upgrade({
         upgradeInfo: ,
         upgradeCostAmount: ,
         upgradeCostCurrency: ,
+        upgradeCostMultiplier: ,
         upgradeEffect: () => ,
-        upgradeGroup: 
+        upgradeGroup: ,
+        upgradeMaxLevel: null,
     }),
 */
 
@@ -21,16 +23,19 @@ export const upgrades = {
         upgradeInfo: "Generate +0.01 more energy per click per level",
         upgradeCostAmount: 0.1,
         upgradeCostCurrency: currencies.energy,
+        upgradeCostMultiplier: 2,
         upgradeEffect: () => {
             playerStats.energyGenPerClick += .01;
         },
-        upgradeGroup: upgradeGroups.upgradeGroup
+        upgradeGroup: upgradeGroups.upgradeGroup,
+        upgradeMaxLevel: 10,
     }),
     autoGenEnergyUpgrade: new Upgrade({
         upgradeName: "Auto Gen Energy",
         upgradeInfo: "Generate +0.01 energy per second",
         upgradeCostAmount: 1,
         upgradeCostCurrency: currencies.energy,
+        upgradeCostMultiplier: 2,
         upgradeEffect: () => {
             currencies.energy.addAmountToGainPerSecond(0.01);
         },
