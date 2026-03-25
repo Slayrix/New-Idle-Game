@@ -1,16 +1,12 @@
 import {helperFunctions} from "../helperFunctions.js";
 
 export default class UpgradeGroup {
-    constructor(displayMenu) {
-        this.upgradeGroupContainer = helperFunctions.createElement("div", null, "upgradeGroup");
-        displayMenu.appendElementToContainer(this.upgradeGroupContainer);
+    constructor(menu) {
+        this.container = helperFunctions.createElement("div", null, "upgradeGroupNew");
+        menu.appendElementToContainer(this.container);
     }
 
-    displayUpgradeGroup() {
-        document.body.append(this.upgradeGroupContainer);
-    }
-
-    appendElementToContainer(element) {
-        this.upgradeGroupContainer.append(element)
+    appendElement(element) {
+        this.container.append(element);
     }
 }

@@ -2,3 +2,5 @@ Archive Date:
 
 Improved/restructured code to make it more modular
 Restructured game files
+Completely remade Upgrade and UpgradeGroup classes
+Removed old Upgrade and UpgradeGroup classes
