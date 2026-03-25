@@ -2,7 +2,7 @@ import {helperFunctions} from "../helperFunctions.js";
 
 export default class UpgradeGroup {
     constructor(menu) {
-        this.container = helperFunctions.createElement("div", null, "upgradeGroupNew");
+        this.container = helperFunctions.createElement("div", null, "upgradeGroup");
         menu.appendElementToContainer(this.container);
     }
 

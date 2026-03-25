@@ -6,7 +6,7 @@ export default class Upgrade {
         this.currency = upgradeCostCurrency;
         this.effect = upgradeEffect;
 
-        this.container = helperFunctions.createElement("div", null, "upgradeContainerNew");
+        this.container = helperFunctions.createElement("div", null, "upgradeContainer");
         this.button = helperFunctions.createElement("div", upgradeName, "upgradeButton");
         this.infobox = helperFunctions.createElement("div", upgradeInfo, "upgradeInfobox");
         this.costText = helperFunctions.createElement("div", "Costs: " + upgradeCostAmount + " " + upgradeCostCurrency.currencyName)
