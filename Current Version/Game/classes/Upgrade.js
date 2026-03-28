@@ -8,7 +8,7 @@ export default class Upgrade {
         this.maxLevel = upgradeMaxLevel
         this.effect = upgradeEffect;
         this.level = 0;
-        this.hoverBox = new HoverBox(upgradeName, upgradeInfo, () => this.buyUpgrade(), ["", ""]);
+        this.hoverBox = new HoverBox(upgradeName, () => this.buyUpgrade(), upgradeInfo, ["", ""]);
         this.updateText();
         
         upgradeGroup.appendElement(this.hoverBox.container);

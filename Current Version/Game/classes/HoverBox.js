@@ -1,7 +1,7 @@
 import {helperFunctions} from "../helperFunctions.js";
 
 export default class HoverBox {
-    constructor(buttonText, infoboxText, buttonEffect, infoboxElementText = []) {
+    constructor(buttonText, buttonEffect, infoboxText, infoboxElementText = [], displayMenu = null, xPos = null, yPos = null) {
         this.infoboxElementText = infoboxElementText;
         this.container = helperFunctions.createElement("div", null, "hoverContainer");
         this.button = helperFunctions.createElement("div", buttonText, "hoverButton");
@@ -16,6 +16,12 @@ export default class HoverBox {
                 this.infobox.append(this.infoboxElements[i]);
             }
             this.updateText();
+        }
+
+        if (displayMenu != null) {
+            this.container.style.left = xPos + "px";
+            this.container.style.top = yPos + "px";
+            displayMenu.appendElementToContainer(this.container);
         }
 
         this.button.addEventListener("mouseenter", () => {
