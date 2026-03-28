@@ -25,5 +25,6 @@ export const buttons = {
     settingsButton: new Button("Settings", menus.mainMenu, 100, 0, () => {Menu.setCurrentMenu(menus.settingsMenu)}),
     settingsBackButton: new Button("Back", menus.settingsMenu, 100, 0, () => {Menu.setCurrentMenu(menus.mainMenu)}),
     saveButton: new Button("Save Game", menus.settingsMenu, 0, 0, () => {}),
-    loadButton: new Button("Load Game", menus.settingsMenu, 0, 10, () => {})
+    loadButton: new Button("Load Game", menus.settingsMenu, 0, 25, () => {}),
+    bigBangButton: new Button("Big Bang", menus.mainMenu, 0, 50, () => {})
 }
