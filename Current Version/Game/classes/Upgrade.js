@@ -21,7 +21,7 @@ export default class Upgrade {
             this.levelText = "Level: " + this.level
         }
         this.costText = this.cost + " " + this.currency.currencyName
-        this.hoverBox.updateText([this.levelText, this.costText])
+        this.hoverBox.updateText([this.costText, this.levelText])
     }
 
     buyUpgrade() {
