@@ -1,13 +1,9 @@
 import {helperFunctions} from "../helperFunctions.js";
 
 export default class HoverBox {
-    constructor(buttonText, buttonEffect, infoboxText, infoboxElementText = [], displayMenu = null, xPos = null, yPos = null) {
+    constructor(infoboxText, infoboxElementText = [], hoverElement, containerElement) {
         this.infoboxElementText = infoboxElementText;
-        this.container = helperFunctions.createElement("div", null, "hoverContainer");
-        this.button = helperFunctions.createElement("div", buttonText, "hoverButton");
         this.infobox = helperFunctions.createElement("div", infoboxText, "hoverInfobox");
-
-        this.container.append(this.button);
 
         if (infoboxElementText.length > 0) {
             this.infoboxElements = [];
@@ -18,21 +14,13 @@ export default class HoverBox {
             this.updateText();
         }
 
-        if (displayMenu != null) {
-            this.container.style.left = xPos + "px";
-            this.container.style.top = yPos + "px";
-            displayMenu.appendElementToContainer(this.container);
-        }
-
-        this.button.addEventListener("mouseenter", () => {
-            this.container.append(this.infobox);
+        hoverElement.addEventListener("mouseenter", () => {
+            containerElement.append(this.infobox);
         });
 
-        this.button.addEventListener("mouseleave", () => {
+        hoverElement.addEventListener("mouseleave", () => {
             this.infobox.remove();
         });
-
-        this.button.addEventListener("click", buttonEffect);
     }
 
     updateText(newInfoboxElementText = []) {

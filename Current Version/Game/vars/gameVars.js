@@ -21,9 +21,9 @@ export const upgradeGroups = {
 }
 
 export const buttons = {
-    genEnergyButton: new Button("Gen Energy", menus.mainMenu, 0, 25, () => currencies.energy.addAmount(playerStats.energyGenPerClick)),
-    settingsButton: new Button("Settings", menus.mainMenu, 100, 0, () => {Menu.setCurrentMenu(menus.settingsMenu)}),
-    settingsBackButton: new Button("Back", menus.settingsMenu, 100, 0, () => {Menu.setCurrentMenu(menus.mainMenu)}),
-    saveButton: new Button("Save Game", menus.settingsMenu, 0, 0, () => {}),
-    loadButton: new Button("Load Game", menus.settingsMenu, 0, 25, () => {})
+    genEnergyButton: new Button("Gen Energy", () => currencies.energy.addAmount(playerStats.energyGenPerClick), menus.mainMenu, 0, 25),
+    settingsButton: new Button("Settings", () => {Menu.setCurrentMenu(menus.settingsMenu)}, menus.mainMenu, 100, 0),
+    settingsBackButton: new Button("Back", () => {Menu.setCurrentMenu(menus.mainMenu)}, menus.settingsMenu, 100, 0),
+    saveButton: new Button("Save Game", () => {}, menus.settingsMenu, 0, 0),
+    loadButton: new Button("Load Game", () => {}, menus.settingsMenu, 0, 25)
 }

@@ -10,7 +10,7 @@
     position: absolute;
 }
 
-.hoverContainer {
+.defaultContainer {
     cursor: default;
     user-select: none;
     position: relative;
@@ -18,15 +18,11 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-right: 5px;
 }
 
-.hoverButton {
+.upgradeButton {
     position: relative;
-    background-color: #cfcfcf;
     width: max-content;
-    padding: 2px;
-    outline: 1px solid #000000;
 }
 
 .hoverInfobox {

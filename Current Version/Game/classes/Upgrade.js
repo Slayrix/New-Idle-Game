@@ -1,4 +1,6 @@
+import Button from "./Button.js";
 import HoverBox from "./HoverBox.js";
+import {helperFunctions} from "../helperFunctions.js";
 
 export default class Upgrade {
     constructor({upgradeName, upgradeInfo, upgradeCostAmount, upgradeCostCurrency, upgradeCostMultiplier, upgradeMaxLevel = null, upgradeEffect, upgradeGroup}) {
@@ -8,10 +10,16 @@ export default class Upgrade {
         this.maxLevel = upgradeMaxLevel
         this.effect = upgradeEffect;
         this.level = 0;
-        this.hoverBox = new HoverBox(upgradeName, () => this.buyUpgrade(), upgradeInfo, ["", ""]);
+        this.container = helperFunctions.createElement("div", null, "defaultContainer");
+        this.container.style.marginRight = "5px";
+        this.button = new Button(upgradeName, () => this.buyUpgrade(), null, null, null, "upgradeButton");
+        this.hoverBox = new HoverBox(upgradeInfo, ["", ""], this.button.buttonVar, this.container);
+
+        this.container.append(this.button.buttonVar);
+
         this.updateText();
         
-        upgradeGroup.appendElement(this.hoverBox.container);
+        upgradeGroup.appendElement(this.container);
     }
 
     updateText() {
