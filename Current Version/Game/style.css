@@ -10,7 +10,7 @@
     position: absolute;
 }
 
-.upgradeContainer {
+.hoverContainer {
     cursor: default;
     user-select: none;
     position: relative;
@@ -21,7 +21,7 @@
     margin-right: 5px;
 }
 
-.upgradeButton {
+.hoverButton {
     position: relative;
     background-color: #cfcfcf;
     width: max-content;
@@ -29,7 +29,7 @@
     outline: 1px solid #000000;
 }
 
-.upgradeInfobox {
+.hoverInfobox {
     position: absolute;
     width: max-content;
     text-align: center;
@@ -43,6 +43,4 @@
 .upgradeGroup {
     position: absolute;
     display: flex;
-    left: 200px;
-    top: 200px;
 }

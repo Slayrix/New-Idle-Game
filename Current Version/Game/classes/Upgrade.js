@@ -1,4 +1,4 @@
-import {helperFunctions} from "../helperFunctions.js";
+import HoverBox from "./HoverBox.js";
 
 export default class Upgrade {
     constructor({upgradeName, upgradeInfo, upgradeCostAmount, upgradeCostCurrency, upgradeCostMultiplier, upgradeMaxLevel = null, upgradeEffect, upgradeGroup}) {
@@ -8,40 +8,20 @@ export default class Upgrade {
         this.maxLevel = upgradeMaxLevel
         this.effect = upgradeEffect;
         this.level = 0;
-        this.createUpgradeElements(upgradeName, upgradeInfo, upgradeGroup)
-    }
-
-    createUpgradeElements(upgradeName, upgradeInfo, upgradeGroup) {
-        this.container = helperFunctions.createElement("div", null, "upgradeContainer");
-        this.button = helperFunctions.createElement("div", upgradeName, "upgradeButton");
-        this.infobox = helperFunctions.createElement("div", upgradeInfo, "upgradeInfobox");
-        this.costText = helperFunctions.createElement("div")
-        this.levelText = helperFunctions.createElement("div");
-        this.updateText()
-        this.container.append(this.button);
-        this.infobox.append(this.costText);
-        this.infobox.append(this.levelText);
-
-        upgradeGroup.appendElement(this.container);
-
-        this.button.addEventListener("mouseenter", () => {
-            this.container.append(this.infobox);
-        });
-
-        this.button.addEventListener("mouseleave", () => {
-            this.infobox.remove();
-        });
-
-        this.button.addEventListener("click", () => this.buyUpgrade());
+        this.hoverBox = new HoverBox(upgradeName, upgradeInfo, () => this.buyUpgrade(), ["", ""]);
+        this.updateText();
+        
+        upgradeGroup.appendElement(this.hoverBox.container);
     }
 
     updateText() {
         if (this.maxLevel != null) {
-            this.levelText.textContent = "Level: " + this.level + " / " + this.maxLevel
+            this.levelText = "Level: " + this.level + " / " + this.maxLevel
         } else {
-            this.levelText.textContent = "Level: " + this.level;
+            this.levelText = "Level: " + this.level
         }
-        this.costText.textContent = "Cost: " + this.cost + " " + this.currency.currencyName;
+        this.costText = this.cost + " " + this.currency.currencyName
+        this.hoverBox.updateText([this.levelText, this.costText])
     }
 
     buyUpgrade() {
@@ -51,6 +31,7 @@ export default class Upgrade {
             this.level += 1;
             this.cost *= this.costMultiplier;
             this.updateText();
+            
         }
     }
 }
